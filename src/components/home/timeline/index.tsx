@@ -70,8 +70,8 @@ export const Timeline: FC = () => {
       return value < storyEachDecider;
     });
 
-    const jyIconHolders = ['baby', 'boy', 'man', 'couple'];
-    const syIconHolders = ['baby', 'girl', 'woman', 'couple'];
+    const quanIconHolders = ['baby-boy', 'man', 'man', 'couple'];
+    const nganIconHolders = ['baby-girl', 'woman', 'woman', 'couple'];
 
     const quanthumb = document.getElementById('quan-thumb');
     const quanIcon = quanthumb?.children[0];
@@ -87,38 +87,22 @@ export const Timeline: FC = () => {
       console.log({ quanIcon, quanthumb, nganIcon, nganthumb });
       return;
     }
-    quanIcon.classList.remove(...jyIconHolders);
+    quanIcon.classList.remove(...quanIconHolders);
     if (quanLevel < 0) {
       quanthumb.style.display = 'none';
       quanthumb.style.left = '0';
       quanthumb.style.transform = 'none';
-      quanIcon.classList.add(jyIconHolders[0]);
+      quanIcon.classList.add(quanIconHolders[0]);
     } else if (storyEachDecider >= togetherContentTop) {
       nganthumb.style.display = 'block';
       quanthumb.style.left = '50%';
       quanthumb.style.transform = 'translateX(-50%)';
-      quanIcon.classList.add(jyIconHolders[jyIconHolders.length - 1]);
-      document
-        .getElementById('playground')
-        ?.classList.add(
-          'bg-gradient-to-b',
-          'from-white',
-          'via-fuchsia-100',
-          'to-fuchsia-50'
-        );
+      quanIcon.classList.add(quanIconHolders[quanIconHolders.length - 1]);
     } else {
       quanthumb.style.display = 'block';
       quanthumb.style.left = (quanLevel / (quanTops.length * 2)) * 100 + '%';
       quanthumb.style.transform = 'none';
-      document
-        .getElementById('playground')
-        ?.classList.remove(
-          'bg-gradient-to-b',
-          'from-white',
-          'via-fuchsia-100',
-          'to-fuchsia-50'
-        );
-      quanIcon.classList.add(jyIconHolders[quanLevel]);
+      quanIcon.classList.add(quanIconHolders[quanLevel]);
     }
 
     const nganTops = Array.from(
@@ -129,22 +113,22 @@ export const Timeline: FC = () => {
     const nganLevel = nganTops.findLastIndex(function (value) {
       return value < storyEachDecider;
     });
-    nganIcon.classList.remove(...syIconHolders);
+    nganIcon.classList.remove(...nganIconHolders);
     if (nganLevel < 0) {
       nganthumb.style.display = 'none';
       nganthumb.style.right = '0';
       nganthumb.style.transform = 'none';
-      nganIcon.classList.add(syIconHolders[0]);
+      nganIcon.classList.add(nganIconHolders[0]);
     } else if (storyEachDecider >= togetherContentTop) {
       nganthumb.style.display = 'block';
       nganthumb.style.right = '50%';
       nganthumb.style.transform = 'translateX(50%)';
-      nganIcon.classList.add(syIconHolders[syIconHolders.length - 1]);
+      nganIcon.classList.add(nganIconHolders[nganIconHolders.length - 1]);
     } else {
       nganthumb.style.display = 'block';
       nganthumb.style.right = (nganLevel / (nganTops.length * 2)) * 100 + '%';
       nganthumb.style.transform = 'none';
-      nganIcon.classList.add(syIconHolders[nganLevel]);
+      nganIcon.classList.add(nganIconHolders[nganLevel]);
     }
   }
 
@@ -229,6 +213,52 @@ export const Timeline: FC = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
+          className={`vertical-timeline-element--work ${styles.element2} ${styles.element} timeline-element-ngan relative`}
+          contentStyle={{ boxShadow: 'none' }}
+          contentArrowStyle={{ display: 'none' }}
+          iconStyle={{
+            backgroundColor: '#be9585',
+            boxShadow: 'none',
+            width: '15px',
+            height: '15px',
+            marginLeft: '-9px',
+          }}
+        >
+          <h4
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+          >
+            2016
+          </h4>
+          <p className={`${barlow.className} !text-lg !font-[400]`}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className={`vertical-timeline-element--work ${styles.element3} ${styles.element} timeline-element-quan relative`}
+          contentStyle={{ boxShadow: 'none' }}
+          contentArrowStyle={{ display: 'none' }}
+          iconStyle={{
+            backgroundColor: '#be9585',
+            boxShadow: 'none',
+            width: '15px',
+            height: '15px',
+            marginLeft: '-9px',
+          }}
+        >
+          <h4
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+          >
+            2020
+          </h4>
+          <p className={`${barlow.className} !text-lg !font-[400]`}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
           className={`vertical-timeline-element--work ${styles.element4} ${styles.element} timeline-element-ngan relative`}
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
@@ -243,7 +273,7 @@ export const Timeline: FC = () => {
           <h4
             className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
           >
-            2011
+            2020
           </h4>
           <p className={`${barlow.className} !text-lg !font-[400]`}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -266,7 +296,7 @@ export const Timeline: FC = () => {
           <h4
             className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
           >
-            2016
+            2023
           </h4>
           <p className={`${barlow.className} !text-lg !font-[400]`}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -279,20 +309,20 @@ export const Timeline: FC = () => {
       <section id='playground-holder' className='h-[170px]'>
         <div
           id='playground'
-          className={`w-full h-[160px] z-[2] left-0 bottom-3 fixed pt-4 ${styles.playground}`}
+          className={`w-full h-[160px] z-[2] left-0 bottom-3 fixed pt-[3rem] ${styles.playground}`}
         >
           <div
             id='quan-thumb'
             className={`thumb quan w-[80px] h-[80px] absolute m-0 left-0 ${styles.thumb}`}
           >
-            <span className='tf xsmall baby'></span>
+            <div className={styles.thumbIcon}></div>
           </div>
 
           <div
             id='ngan-thumb'
             className={`thumb ngan w-[80px] h-[80px] absolute m-0 right-0 ${styles.thumb}`}
           >
-            <span className='tf xsmall baby'></span>
+            <div className={styles.thumbIcon}></div>
           </div>
         </div>
       </section>

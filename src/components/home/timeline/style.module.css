@@ -56,3 +56,11 @@
   transition: right 0.25s ease-in-out, left 0.25s ease-in-out,
     transform 0.25s ease-in-out;
 }
+
+.thumbIcon {
+  width: 60px;
+  height: 60px;
+  display: block;
+  background-position: center;
+  background-size: contain;
+}

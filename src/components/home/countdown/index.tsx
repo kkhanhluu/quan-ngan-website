@@ -39,7 +39,7 @@ export const Countdown: FC = () => {
   const [second, setSecond] = useState<number>();
 
   return (
-    <div className='flex w-full mb-[20rem] px-[5%] items-center'>
+    <div className='flex w-full mt-[10rem] mb-[20rem] px-[5%] items-center'>
       <Image src={flowerLeft} alt='flower left' />
       <div className='flex space-x-2 w-full justify-evenly'>
         <CountDownItem title='Tháng' value={month ?? 0} />

@@ -15,19 +15,19 @@ const incosolata = Inconsolata({
 
 export const InvitationCard: FC = () => {
   return (
-    <div className='h-fit pb-[4rem] z-0 w-full relative'>
+    <div className='h-[45rem] z-0 w-full relative'>
       <Image
         src={imageBgFlower}
         alt='flower'
-        className='w-[220px] mt-[10rem] ml-[15%]'
+        className='w-[220px] top-[20%] left-[22%] z-20 absolute'
       />
       <Image
         src={rightImage}
         alt='flower'
-        className='w-[220px] ml-[73%] mb-2rem'
+        className='w-[220px] absolute -bottom-[15%] right-[25%] z-20'
       />
       <div
-        className={`bg-white ${incosolata.className} tracking-[2px] font-[500] w-[45%] mx-auto p-2 absolute top-[22%] left-[28%]`}
+        className={`bg-white ${incosolata.className} tracking-[2px] font-[500] w-[45%] mx-auto p-2 absolute z-10 top-[30%] left-[28%]`}
       >
         <div className='border-2 items-center py-10 px-12 flex flex-col background border-gray-border'>
           <h4 className={`${bettrisisa.className} font-bold text-6xl`}>
