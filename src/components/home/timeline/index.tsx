@@ -98,11 +98,13 @@ export const Timeline: FC = () => {
       quanthumb.style.left = '50%';
       quanthumb.style.transform = 'translateX(-50%)';
       quanIcon.classList.add(quanIconHolders[quanIconHolders.length - 1]);
+      document.getElementById('playground')?.classList.remove('fixed');
     } else {
       quanthumb.style.display = 'block';
       quanthumb.style.left = (quanLevel / (quanTops.length * 2)) * 100 + '%';
       quanthumb.style.transform = 'none';
       quanIcon.classList.add(quanIconHolders[quanLevel]);
+      document.getElementById('playground')?.classList.add('fixed');
     }
 
     const nganTops = Array.from(
@@ -148,7 +150,7 @@ export const Timeline: FC = () => {
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
           iconStyle={{
-            backgroundColor: '#be9585',
+            backgroundColor: '#e9c4da',
             boxShadow: 'none',
             width: '15px',
             height: '15px',
@@ -156,7 +158,7 @@ export const Timeline: FC = () => {
           }}
         >
           <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
           >
             1997
           </h4>
@@ -171,7 +173,7 @@ export const Timeline: FC = () => {
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
           iconStyle={{
-            backgroundColor: '#be9585',
+            backgroundColor: '#e9c4da',
             boxShadow: 'none',
             width: '15px',
             height: '15px',
@@ -179,7 +181,7 @@ export const Timeline: FC = () => {
           }}
         >
           <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
           >
             1997
           </h4>
@@ -194,7 +196,7 @@ export const Timeline: FC = () => {
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
           iconStyle={{
-            backgroundColor: '#be9585',
+            backgroundColor: '#e9c4da',
             boxShadow: 'none',
             width: '15px',
             height: '15px',
@@ -202,7 +204,7 @@ export const Timeline: FC = () => {
           }}
         >
           <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
           >
             2011
           </h4>
@@ -217,7 +219,7 @@ export const Timeline: FC = () => {
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
           iconStyle={{
-            backgroundColor: '#be9585',
+            backgroundColor: '#e9c4da',
             boxShadow: 'none',
             width: '15px',
             height: '15px',
@@ -225,7 +227,7 @@ export const Timeline: FC = () => {
           }}
         >
           <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
           >
             2016
           </h4>
@@ -240,7 +242,7 @@ export const Timeline: FC = () => {
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
           iconStyle={{
-            backgroundColor: '#be9585',
+            backgroundColor: '#e9c4da',
             boxShadow: 'none',
             width: '15px',
             height: '15px',
@@ -248,7 +250,7 @@ export const Timeline: FC = () => {
           }}
         >
           <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
           >
             2020
           </h4>
@@ -263,7 +265,7 @@ export const Timeline: FC = () => {
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
           iconStyle={{
-            backgroundColor: '#be9585',
+            backgroundColor: '#e9c4da',
             boxShadow: 'none',
             width: '15px',
             height: '15px',
@@ -271,7 +273,7 @@ export const Timeline: FC = () => {
           }}
         >
           <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
           >
             2020
           </h4>
@@ -286,7 +288,7 @@ export const Timeline: FC = () => {
           contentStyle={{ boxShadow: 'none' }}
           contentArrowStyle={{ display: 'none' }}
           iconStyle={{
-            backgroundColor: '#be9585',
+            backgroundColor: '#e9c4da',
             boxShadow: 'none',
             width: '15px',
             height: '15px',
@@ -294,7 +296,7 @@ export const Timeline: FC = () => {
           }}
         >
           <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#be9585]`}
+            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
           >
             2023
           </h4>

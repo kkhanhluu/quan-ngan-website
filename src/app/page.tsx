@@ -2,6 +2,8 @@ import { Header } from '@/components/header';
 import { BannerSlider } from '@/components/home/banner-slider';
 import { Countdown } from '@/components/home/countdown';
 import { InvitationCard } from '@/components/home/invitation-card';
+import { MainAlbum } from '@/components/home/main-album';
+import { SecondAlbum } from '@/components/home/second-album';
 import { Timeline } from '@/components/home/timeline';
 import Image from 'next/image';
 import heroText from '../../public/hero-text.png';
@@ -29,6 +31,12 @@ export default function Home() {
       </section>
       <section>
         <Timeline />
+      </section>
+      <section className='w-[70%]'>
+        <MainAlbum />
+      </section>
+      <section className='w-full mt-[15rem]'>
+        <SecondAlbum />
       </section>
     </main>
   );
