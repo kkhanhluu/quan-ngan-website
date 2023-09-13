@@ -47,6 +47,11 @@ body {
   font-family: 'Simpliciter Sans Small Caps';
 }
 
+.on-story-each #playground {
+  position: fixed;
+  bottom: 0.75rem;
+}
+
 .baby-boy {
   background-image: url(/boy.png);
 }

@@ -64,7 +64,7 @@ const CountDownItem: FC<{ title: string; value: number }> = ({
       >
         {title}
       </p>
-      <div className={`${barlow.className} text-3xl`}>
+      <div className={`${barlow.className} text-6xl`}>
         {value.toString().padStart(2, '0')}
       </div>
     </div>

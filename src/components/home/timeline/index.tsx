@@ -98,13 +98,11 @@ export const Timeline: FC = () => {
       quanthumb.style.left = '50%';
       quanthumb.style.transform = 'translateX(-50%)';
       quanIcon.classList.add(quanIconHolders[quanIconHolders.length - 1]);
-      document.getElementById('playground')?.classList.remove('fixed');
     } else {
       quanthumb.style.display = 'block';
       quanthumb.style.left = (quanLevel / (quanTops.length * 2)) * 100 + '%';
       quanthumb.style.transform = 'none';
       quanIcon.classList.add(quanIconHolders[quanLevel]);
-      document.getElementById('playground')?.classList.add('fixed');
     }
 
     const nganTops = Array.from(
@@ -140,7 +138,7 @@ export const Timeline: FC = () => {
     window.removeEventListener('scroll', throttledOnScroll);
     window.addEventListener('scroll', throttledOnScroll, { passive: true });
     return () => window.removeEventListener('scroll', throttledOnScroll);
-  }, []);
+  }, [throttledOnScroll]);
 
   return (
     <div ref={storyRef}>
@@ -308,10 +306,10 @@ export const Timeline: FC = () => {
         </VerticalTimelineElement>
       </VerticalTimeline>
 
-      <section id='playground-holder' className='h-[170px]'>
+      <section id='playground-holder' ref={pgHolder} className='h-[170px]'>
         <div
           id='playground'
-          className={`w-full h-[160px] z-[2] left-0 bottom-3 fixed pt-[3rem] ${styles.playground}`}
+          className={`w-full h-[160px] z-[2] left-0 pt-[3rem] ${styles.playground}`}
         >
           <div
             id='quan-thumb'
