@@ -1,0 +1,58 @@
+.timeline::before {
+  background: linear-gradient(
+    to bottom,
+    #e9c4da,
+    #e9c4da 50%,
+    #ffffff 50%,
+    #ffffff
+  );
+  background-size: 100% 10px;
+  width: 2px;
+}
+
+.element {
+  margin-bottom: 8rem;
+}
+
+.element::before {
+  content: '';
+  width: 15rem;
+  height: 15rem;
+  display: block;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+
+.element1::before {
+  background-image: url('/timeline-1.jpg');
+  left: 55%;
+}
+
+.element2::before {
+  background-image: url('/timeline-2.jpg');
+  right: 55%;
+}
+
+.element3::before {
+  background-image: url('/timeline-3.jpg');
+  left: 55%;
+}
+
+.element4::before {
+  background-image: url('/timeline-4.jpg');
+  right: 55%;
+}
+
+.element5::before {
+  background-image: url('/timeline-5.jpg');
+  left: 55%;
+}
+
+.thumb {
+  transition: right 0.25s ease-in-out, left 0.25s ease-in-out,
+    transform 0.25s ease-in-out;
+}

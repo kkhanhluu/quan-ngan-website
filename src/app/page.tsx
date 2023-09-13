@@ -2,6 +2,7 @@ import { Header } from '@/components/header';
 import { BannerSlider } from '@/components/home/banner-slider';
 import { Countdown } from '@/components/home/countdown';
 import { InvitationCard } from '@/components/home/invitation-card';
+import { Timeline } from '@/components/home/timeline';
 import Image from 'next/image';
 import heroText from '../../public/hero-text.png';
 
@@ -26,7 +27,9 @@ export default function Home() {
         <InvitationCard />
         <Countdown />
       </section>
-      <section>Love story</section>
+      <section>
+        <Timeline />
+      </section>
     </main>
   );
 }
