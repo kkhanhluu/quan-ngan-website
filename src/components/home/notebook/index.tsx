@@ -1,4 +1,6 @@
 /* eslint-disable react/display-name */
+// @ts-nocheck
+
 'use client';
 
 import { Moon_Dance } from 'next/font/google';
@@ -17,7 +19,7 @@ const moonDance = Moon_Dance({ subsets: ['vietnamese'], weight: '400' });
 const wishes = new Array(6).fill(null);
 export const Notebook: FC = () => {
   return (
-    <div className='w-1/2'>
+    <div className='w-[60%]'>
       <HTMLFlipBook
         width={550}
         height={733}

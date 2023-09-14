@@ -1,6 +1,7 @@
 import { Header } from '@/components/header';
 import { BannerSlider } from '@/components/home/banner-slider';
 import { Countdown } from '@/components/home/countdown';
+import { Form } from '@/components/home/form';
 import { InvitationCard } from '@/components/home/invitation-card';
 import { MainAlbum } from '@/components/home/main-album';
 import { Notebook } from '@/components/home/notebook';
@@ -39,7 +40,8 @@ export default function Home() {
       <section className='w-full mt-[15rem]'>
         <SecondAlbum />
       </section>
-      <section className='flex w-full my-10 justify-center'>
+      <section className='flex mt-[4rem] flex-col items-center space-y-[6rem] mb-[5rem] w-full justify-center'>
+        <Form />
         <Notebook />
       </section>
     </main>

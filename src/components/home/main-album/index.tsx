@@ -48,11 +48,11 @@ export const MainAlbum: FC = () => {
                 />
                 <div className='flex flex-col space-y-10'>
                   <h4
-                    className={`${bettrisisa.className} !font-extrabold text-6xl text-pastel-pink`}
+                    className={`${bettrisisa.className} !font-extrabold text-6xl text-pastel-blue`}
                   >
                     Quân & Ngân
                   </h4>
-                  <div className='flex flex-col items-center text-pastel-pink'>
+                  <div className='flex flex-col items-center text-pastel-blue'>
                     <h5
                       className={`${moonDance.className} capitalize text-4xl`}
                     >

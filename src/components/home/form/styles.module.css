@@ -1,0 +1,28 @@
+.input,
+.textarea {
+  background: transparent;
+  border: none;
+}
+
+.input {
+  margin-left: 10px;
+  width: 240px;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  padding: 5px;
+}
+
+.postcard {
+  background: url('https://developer.mozilla.org/files/4151/background.jpg'); /*img from: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Styling_HTML_forms */
+  border: 2px solid #ccc;
+  box-shadow: 7px 7px 20px #555;
+}
+
+.button {
+  font: sans-serif;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  transform: rotate(-1.5deg);
+}
