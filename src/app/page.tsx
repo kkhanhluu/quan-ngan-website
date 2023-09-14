@@ -3,6 +3,7 @@ import { BannerSlider } from '@/components/home/banner-slider';
 import { Countdown } from '@/components/home/countdown';
 import { InvitationCard } from '@/components/home/invitation-card';
 import { MainAlbum } from '@/components/home/main-album';
+import { Notebook } from '@/components/home/notebook';
 import { SecondAlbum } from '@/components/home/second-album';
 import { Timeline } from '@/components/home/timeline';
 import Image from 'next/image';
@@ -37,6 +38,9 @@ export default function Home() {
       </section>
       <section className='w-full mt-[15rem]'>
         <SecondAlbum />
+      </section>
+      <section className='flex w-full my-10 justify-center'>
+        <Notebook />
       </section>
     </main>
   );
