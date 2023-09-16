@@ -24,17 +24,20 @@ export const Form: FC = () => {
       </div>
       <div className='flex flex-col justify-end w-1/2 md:w-full md:items-end'>
         <div className='text-lg flex items-center space-x-4 w-full'>
-          <div>Tới: </div>{' '}
+          <div className='md:!ml-[3rem]'>Tới: </div>{' '}
           <div className={`${moonDance.className} text-3xl md:text-2xl`}>
             Quân & Ngân
           </div>
         </div>
-        <div className='flex items-center space-x-4 mt-4 justify-start'>
-          <label htmlFor='sender' className='text-lg md:text-base block'>
+        <div className='flex items-center space-x-4 mt-4 justify-start md:w-full'>
+          <label
+            htmlFor='sender'
+            className='text-lg md:!ml-[3rem] md:text-base block'
+          >
             Người gửi:
           </label>
           <input
-            className={`text-3xl block ${moonDance.className} border-b-2`}
+            className={`text-3xl md:w-[60%] md:text-2xl block ${moonDance.className} border-b-2`}
             type='text'
             id='sender'
             name='sender-name'

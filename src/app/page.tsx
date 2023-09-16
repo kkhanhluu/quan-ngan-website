@@ -1,3 +1,4 @@
+import { Header } from '@/components/header';
 import { BannerSlider } from '@/components/home/banner-slider';
 import { Countdown } from '@/components/home/countdown';
 import { Form } from '@/components/home/form';
@@ -22,7 +23,7 @@ export default function Home() {
   return (
     <main className='flex min-h-screen flex-col items-center justify-between'>
       <section className='min-h-[90vh] pt-20 z-10 w-full flex flex-col items-center relative'>
-        {/* <Header /> */}
+        <Header />
         <BannerSlider />
         <div className='flex flex-col items-end'>
           <h4
@@ -46,7 +47,7 @@ export default function Home() {
         <InvitationCard />
         <Countdown />
       </section>
-      <section className=''>
+      <section className='md:-mt-[8rem]'>
         <Timeline />
       </section>
       <section className='w-[70%] md:w-full md:mt-[5rem]'>

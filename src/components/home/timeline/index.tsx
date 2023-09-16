@@ -182,7 +182,7 @@ export const Timeline: FC = () => {
       <section
         id='playground-holder'
         ref={pgHolder}
-        className='h-[170px] md:h-[8rem] md:mt-[11rem] z-40 w-[100vw]'
+        className='h-[170px] md:h-[8rem] md:mt-[8rem] z-40 w-[100vw]'
       >
         <div
           id='playground'

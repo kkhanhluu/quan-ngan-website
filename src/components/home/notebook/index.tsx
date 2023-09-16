@@ -19,19 +19,19 @@ const moonDance = Moon_Dance({ subsets: ['vietnamese'], weight: '400' });
 const wishes = new Array(6).fill(null);
 export const Notebook: FC = () => {
   return (
-    <div className='md:hidden w-[60%]'>
+    <div className='w-[60%] md:w-full md:!mt-[10rem]'>
       <HTMLFlipBook
         width={550}
         height={733}
-        size='stretch'
         minWidth={315}
         maxWidth={1000}
         minHeight={400}
         maxHeight={1533}
+        size='stretch'
         maxShadowOpacity={0.5}
         showCover={true}
         mobileScrollSupport={true}
-        className={styles.flipBook}
+        className={`${styles.flipBook} md:!w-full`}
       >
         <PageCover />
         {wishes.map((wish, index) => (
@@ -60,7 +60,7 @@ const PageCover = forwardRef(
           transformOrigin: '0% 50%',
           padding: '5% 4% 4% 5%',
         }}
-        className={`${styles.page} !bg-[#FAFAFA] text-center flex flex-col items-center`}
+        className={`${styles.page} !bg-[#FAFAFA] text-center flex flex-col items-center w-full`}
         ref={ref}
         data-density='hard'
       >
@@ -77,6 +77,11 @@ const PageCover = forwardRef(
             <h4 className={`${bettrisisa.className} font-bold text-5xl`}>
               Quân & Ngân
             </h4>
+            <p
+              className={`${moonDance.className} font-semibold md:text-base text-2xl`}
+            >
+              Hà Nội, 23.10.2023{' '}
+            </p>
           </div>
         </div>
       </div>
