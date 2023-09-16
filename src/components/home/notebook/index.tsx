@@ -19,7 +19,7 @@ const moonDance = Moon_Dance({ subsets: ['vietnamese'], weight: '400' });
 const wishes = new Array(6).fill(null);
 export const Notebook: FC = () => {
   return (
-    <div className='w-[60%]'>
+    <div className='md:hidden w-[60%]'>
       <HTMLFlipBook
         width={550}
         height={733}

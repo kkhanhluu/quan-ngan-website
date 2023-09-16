@@ -2,11 +2,7 @@
 
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
-import Image from 'next/image';
 import { FC, useState } from 'react';
-import slide1 from '../../../../public/slider-1.jpeg';
-import slide2 from '../../../../public/slider-3.jpg';
-import slide3 from '../../../../public/slider-4-1.jpg';
 
 export const BannerSlider: FC = () => {
   const [opacities, setOpacities] = useState<number[]>([]);
@@ -59,22 +55,16 @@ export const BannerSlider: FC = () => {
       <div ref={ref} className='keen-slider overflow-hidden h-full relative'>
         <div
           style={{ opacity: opacities[0] }}
-          className='fader__slide w-full h-full absolute top-0'
-        >
-          <Image src={slide1} alt='slider 1' className='w-full' />
-        </div>
+          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-1.jpeg)]`}
+        ></div>
         <div
           style={{ opacity: opacities[1] }}
-          className='fader__slide w-full h-full absolute top-0'
-        >
-          <Image src={slide2} alt='slider 2' className='w-full' />
-        </div>
+          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-3.jpg)]`}
+        ></div>
         <div
           style={{ opacity: opacities[2] }}
-          className='fader__slide w-full h-full absolute top-0'
-        >
-          <Image src={slide3} alt='slider 3' className='w-full' />
-        </div>
+          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-3.jpg)]`}
+        ></div>
       </div>
     </div>
   );

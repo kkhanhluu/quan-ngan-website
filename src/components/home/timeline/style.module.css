@@ -14,6 +14,33 @@
   margin-bottom: 8rem;
 }
 
+.icon {
+  background-color: #e9c4da;
+  box-shadow: none;
+  width: 15px !important;
+  height: 15px !important;
+  margin-left: -9px !important;
+}
+
+@media screen and (max-width: 678px) {
+  .icon {
+    margin-left: 12px !important;
+  }
+
+  .element::before {
+    left: 20% !important;
+    z-index: 10;
+    width: 10rem !important;
+    height: 10rem !important;
+    top: 100% !important;
+    right: 0 !important;
+  }
+
+  .element {
+    margin-bottom: 12rem;
+  }
+}
+
 .element::before {
   content: '';
   width: 15rem;
@@ -25,6 +52,7 @@
   border-radius: 50%;
   position: absolute;
   top: 0;
+  z-index: 1;
 }
 
 .element1::before {
@@ -49,6 +77,16 @@
 
 .element5::before {
   background-image: url('/timeline-5.jpg');
+  left: 55%;
+}
+
+.element6::before {
+  background-image: url('/timeline-1.jpg');
+  right: 55%;
+}
+
+.element7::before {
+  background-image: url('/timeline-2.jpg');
   left: 55%;
 }
 

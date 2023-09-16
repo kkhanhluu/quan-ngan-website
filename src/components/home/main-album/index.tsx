@@ -40,26 +40,26 @@ export const MainAlbum: FC = () => {
         }) => {
           if (photo.src === '/empty.avif') {
             return (
-              <div className='flex overflow-hidden bg-[#FAFAFA] px-10 space-y-2 flex-col justify-center items-center self-stretch'>
+              <div className='flex overflow-hidden bg-[#FAFAFA] px-10 space-y-2 md:px-0 flex-col justify-center items-center self-stretch'>
                 <Image
                   src={albumTitle}
                   alt='Album title'
-                  className='w-[20rem] max-w-full -mt-[4rem]'
+                  className='w-[20rem] max-w-full -mt-[4rem] md:-mt-[2rem] md:w-[8rem]'
                 />
-                <div className='flex flex-col space-y-10'>
+                <div className='flex flex-col space-y-10 md:space-y-2 w-full md:!-mt-[1.5rem]'>
                   <h4
-                    className={`${bettrisisa.className} !font-extrabold text-6xl text-pastel-blue`}
+                    className={`${bettrisisa.className} md:text-xl !font-extrabold text-6xl text-pastel-blue text-center`}
                   >
                     Quân & Ngân
                   </h4>
                   <div className='flex flex-col items-center text-pastel-blue'>
                     <h5
-                      className={`${moonDance.className} capitalize text-4xl`}
+                      className={`${moonDance.className} !font-semibold capitalize text-4xl md:text-[14px]`}
                     >
                       Hà nội,
                     </h5>
                     <h5
-                      className={`${moonDance.className} !font-bold text-2xl`}
+                      className={`${moonDance.className} !font-semibold text-2xl md:text-[13px] md:-mt-[1rem]`}
                     >
                       22/10/2023
                     </h5>

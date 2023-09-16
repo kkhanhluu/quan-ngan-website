@@ -26,7 +26,7 @@ function getAbsolutePosition(elem: HTMLElement | Element | null) {
   }
   const r = elem.getBoundingClientRect();
   return {
-    top: r.top + window.scrollY + r.width / 5,
+    top: r.top + window.scrollY + 100,
     bottom: r.bottom + window.scrollY,
   };
 }
@@ -56,6 +56,8 @@ export const Timeline: FC = () => {
       document.body.classList.remove(storyAfterToken);
     }
 
+    const playground = document.getElementById('playground');
+
     const togetherContent = Array.from(
       document.getElementsByClassName('timeline-element-last')
     )[0];
@@ -82,9 +84,9 @@ export const Timeline: FC = () => {
       quanthumb == null ||
       nganthumb == null ||
       quanIcon == null ||
-      nganIcon == null
+      nganIcon == null ||
+      playground == null
     ) {
-      console.log({ quanIcon, quanthumb, nganIcon, nganthumb });
       return;
     }
     quanIcon.classList.remove(...quanIconHolders);
@@ -140,176 +142,51 @@ export const Timeline: FC = () => {
     return () => window.removeEventListener('scroll', throttledOnScroll);
   }, [throttledOnScroll]);
 
+  const events = new Array(7).fill(null).map((_, index) => ({
+    year: 1997 + index * 3,
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+  }));
+
   return (
-    <div ref={storyRef}>
+    <div ref={storyRef} className='w-full max-w-full'>
       <VerticalTimeline className={`${styles.timeline}`}>
-        <VerticalTimelineElement
-          className={`vertical-timeline-element--work ${styles.element1} ${styles.element} timeline-element-quan relative`}
-          contentStyle={{ boxShadow: 'none' }}
-          contentArrowStyle={{ display: 'none' }}
-          iconStyle={{
-            backgroundColor: '#e9c4da',
-            boxShadow: 'none',
-            width: '15px',
-            height: '15px',
-            marginLeft: '-9px',
-          }}
-        >
-          <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
-          >
-            1997
-          </h4>
-          <p className={`${barlow.className} !text-lg !font-[400]`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className={`vertical-timeline-element--work ${styles.element2} ${styles.element} timeline-element-ngan relative`}
-          contentStyle={{ boxShadow: 'none' }}
-          contentArrowStyle={{ display: 'none' }}
-          iconStyle={{
-            backgroundColor: '#e9c4da',
-            boxShadow: 'none',
-            width: '15px',
-            height: '15px',
-            marginLeft: '-9px',
-          }}
-        >
-          <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
-          >
-            1997
-          </h4>
-          <p className={`${barlow.className} !text-lg !font-[400]`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className={`vertical-timeline-element--work ${styles.element3} ${styles.element} timeline-element-quan relative`}
-          contentStyle={{ boxShadow: 'none' }}
-          contentArrowStyle={{ display: 'none' }}
-          iconStyle={{
-            backgroundColor: '#e9c4da',
-            boxShadow: 'none',
-            width: '15px',
-            height: '15px',
-            marginLeft: '-9px',
-          }}
-        >
-          <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
-          >
-            2011
-          </h4>
-          <p className={`${barlow.className} !text-lg !font-[400]`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className={`vertical-timeline-element--work ${styles.element2} ${styles.element} timeline-element-ngan relative`}
-          contentStyle={{ boxShadow: 'none' }}
-          contentArrowStyle={{ display: 'none' }}
-          iconStyle={{
-            backgroundColor: '#e9c4da',
-            boxShadow: 'none',
-            width: '15px',
-            height: '15px',
-            marginLeft: '-9px',
-          }}
-        >
-          <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
-          >
-            2016
-          </h4>
-          <p className={`${barlow.className} !text-lg !font-[400]`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className={`vertical-timeline-element--work ${styles.element3} ${styles.element} timeline-element-quan relative`}
-          contentStyle={{ boxShadow: 'none' }}
-          contentArrowStyle={{ display: 'none' }}
-          iconStyle={{
-            backgroundColor: '#e9c4da',
-            boxShadow: 'none',
-            width: '15px',
-            height: '15px',
-            marginLeft: '-9px',
-          }}
-        >
-          <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
-          >
-            2020
-          </h4>
-          <p className={`${barlow.className} !text-lg !font-[400]`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className={`vertical-timeline-element--work ${styles.element4} ${styles.element} timeline-element-ngan relative`}
-          contentStyle={{ boxShadow: 'none' }}
-          contentArrowStyle={{ display: 'none' }}
-          iconStyle={{
-            backgroundColor: '#e9c4da',
-            boxShadow: 'none',
-            width: '15px',
-            height: '15px',
-            marginLeft: '-9px',
-          }}
-        >
-          <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
-          >
-            2020
-          </h4>
-          <p className={`${barlow.className} !text-lg !font-[400]`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className={`vertical-timeline-element--work timeline-element-last ${styles.element5} ${styles.element} relative`}
-          contentStyle={{ boxShadow: 'none' }}
-          contentArrowStyle={{ display: 'none' }}
-          iconStyle={{
-            backgroundColor: '#e9c4da',
-            boxShadow: 'none',
-            width: '15px',
-            height: '15px',
-            marginLeft: '-9px',
-          }}
-        >
-          <h4
-            className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
-          >
-            2023
-          </h4>
-          <p className={`${barlow.className} !text-lg !font-[400]`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </p>
-        </VerticalTimelineElement>
+        {events.map((event, index) => {
+          const style = getClassName(index + 1);
+          const quanNganClass =
+            index % 2 === 0 ? 'timeline-element-quan' : 'timeline-element-ngan';
+          const lastElementClass =
+            index === events.length - 1 ? 'timeline-element-last' : '';
+          return (
+            <VerticalTimelineElement
+              key={index}
+              className={`vertical-timeline-element--work ${style} ${lastElementClass} ${quanNganClass} ${styles.element} relative`}
+              contentStyle={{ boxShadow: 'none' }}
+              contentArrowStyle={{ display: 'none' }}
+              iconClassName={styles.icon}
+            >
+              <h4
+                className={`vertical-timeline-element-title ${garamond.className} text-2xl text-[#e9c4da]`}
+              >
+                {event.year}
+              </h4>
+              <p
+                className={`${barlow.className} !text-lg md:!text-base !font-[400]`}
+              >
+                {event.text}
+              </p>
+            </VerticalTimelineElement>
+          );
+        })}
       </VerticalTimeline>
 
-      <section id='playground-holder' ref={pgHolder} className='h-[170px]'>
+      <section
+        id='playground-holder'
+        ref={pgHolder}
+        className='h-[170px] md:h-[8rem] md:mt-[11rem] z-40 w-[100vw]'
+      >
         <div
           id='playground'
-          className={`w-full h-[160px] z-[2] left-0 pt-[3rem] ${styles.playground}`}
+          className={`w-full h-[200px] z-[2] left-0 pt-[4.5rem] md:pt-[3.5rem] md:h-[8rem] ${styles.playground}`}
         >
           <div
             id='quan-thumb'
@@ -329,3 +206,22 @@ export const Timeline: FC = () => {
     </div>
   );
 };
+
+function getClassName(index: number) {
+  switch (index) {
+    case 1:
+      return styles.element1;
+    case 2:
+      return styles.element2;
+    case 3:
+      return styles.element3;
+    case 4:
+      return styles.element4;
+    case 5:
+      return styles.element5;
+    case 6:
+      return styles.element6;
+    case 7:
+      return styles.element7;
+  }
+}

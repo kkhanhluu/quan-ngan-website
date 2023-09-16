@@ -39,7 +39,7 @@ export const Countdown: FC = () => {
   const [second, setSecond] = useState<number>();
 
   return (
-    <div className='flex w-full mt-[10rem] mb-[20rem] px-[5%] items-center'>
+    <div className='flex w-full mt-[25rem] mb-[20rem] px-[5%] items-center md:mt-[20rem] md:flex-col md:space-y-8'>
       <Image src={flowerLeft} alt='flower left' />
       <div className='flex space-x-2 w-full justify-evenly'>
         <CountDownItem title='Tháng' value={month ?? 0} />
@@ -60,11 +60,11 @@ const CountDownItem: FC<{ title: string; value: number }> = ({
   return (
     <div className='flex flex-col items-center'>
       <p
-        className={`capitalize ${garamond.className} font-bold text-2xl text-[#905478]`}
+        className={`capitalize ${garamond.className} md:text-lg font-bold text-2xl text-[#905478]`}
       >
         {title}
       </p>
-      <div className={`${barlow.className} text-6xl`}>
+      <div className={`${barlow.className} text-6xl md:text-3xl`}>
         {value.toString().padStart(2, '0')}
       </div>
     </div>
