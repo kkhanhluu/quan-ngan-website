@@ -3,7 +3,8 @@
 import { Barlow } from 'next/font/google';
 import Image from 'next/image';
 import { FC } from 'react';
-import logo from '../../../public/logo.png';
+import logo from '../../../public/logo-black.png';
+import logoPink from '../../../public/logo-pink.png';
 
 const barlow = Barlow({ subsets: ['vietnamese'], weight: ['400', '500'] });
 
@@ -19,7 +20,7 @@ export const Header: FC = () => {
       <div
         className={`flex flex-col items-center space-y-10 ${barlow.className} z-20 md:hidden`}
       >
-        <Image src={logo} alt='Logo' />
+        <Image src={logo} alt='Logo' className='w-[350px]' />
         <div className='flex'>
           {menu.map((item) => (
             <div
@@ -34,31 +35,24 @@ export const Header: FC = () => {
 
       {/* Mobile */}
       <nav
-        className={`bg-white border-gray-200 dark:bg-gray-900 max-h-[72px] transition-all w-full ${barlow.className}`}
+        className={`bg-white border-gray-200 dark:bg-gray-900  transition-all w-full md:block hidden ${barlow.className}`}
         id='mobile-navbar'
       >
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
-          <a href='https://flowbite.com/' className='flex items-center'>
-            <Image src={logo} className='w-[10rem]' alt='Logo' />
-            {/* <img
-              src='https://flowbite.com/docs/images/logo.svg'
-              className='h-8 mr-3'
-              alt='Flowbite Logo'
-            /> */}
-          </a>
+          <Image src={logoPink} className='w-[60%] mt-[4rem]' alt='Logo' />
           <button
             data-collapse-toggle='navbar-default'
             type='button'
-            className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-pastel-pink rounded-lg focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+            className='inline-flex items-center p-2 w-10 mt-[3rem] h-10 justify-center text-sm text-pastel-pink rounded-lg focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
             aria-controls='navbar-default'
             aria-expanded='false'
             onClick={() => {
               document
                 .getElementById('navbar-default')
-                ?.classList.toggle('opacity-0');
+                ?.classList.toggle('hidden');
               document
-                .getElementById('mobile-navbar')
-                ?.classList.toggle('max-h-[72px]');
+                .getElementById('banner-text')
+                ?.classList.toggle('translate-y-[4rem]');
             }}
           >
             <span className='sr-only'>Open main menu</span>
@@ -78,7 +72,7 @@ export const Header: FC = () => {
               />
             </svg>
           </button>
-          <div className='opacity-0 w-full' id='navbar-default'>
+          <div className='hidden w-full' id='navbar-default'>
             <ul className='font-medium flex flex-col mt-4'>
               {menu.map((item, index) => (
                 <li key={item.link}>

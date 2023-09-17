@@ -1,6 +1,7 @@
 import { Header } from '@/components/header';
 import { BannerSlider } from '@/components/home/banner-slider';
 import { Countdown } from '@/components/home/countdown';
+import { Footer } from '@/components/home/footer';
 import { Form } from '@/components/home/form';
 import { InvitationCard } from '@/components/home/invitation-card';
 import { MainAlbum } from '@/components/home/main-album';
@@ -102,15 +103,18 @@ export default async function Home() {
     <main className='flex min-h-screen flex-col items-center justify-between'>
       <section
         data-aos='fade-left'
-        className='min-h-[90vh] pt-20 md:pt-0 z-10 w-full flex flex-col items-center relative'
+        className='min-h-[90vh] -mt-[4rem] pt-20 md:pt-0 z-10 w-full flex flex-col items-center relative'
       >
         <Header />
         <BannerSlider />
-        <div className='flex flex-col items-end md:absolute md:top-[40vh]'>
+        <div
+          id='banner-text'
+          className='flex flex-col mt-16 items-end md:absolute md:top-[60vh] transition-all'
+        >
           <h4
             data-aos='slide-up'
             data-aos-duration='1000'
-            className={`${bettrisisa.className} md:text-4xl !font-extralight mt-[6rem] text-8xl z-20 md:mt-0`}
+            className={`${bettrisisa.className} md:text-4xl !font-extralight text-8xl z-20 md:mt-0`}
           >
             Me and you. Just us two.
           </h4>
@@ -154,6 +158,9 @@ export default async function Home() {
       >
         <Form submitWish={submitWish} />
         <Notebook wishes={wishes} />
+      </section>
+      <section className='w-full h-[100vh] min-h-[900px] bg-[url(/footer-bg.png)] bg-center flex flex-col items-center justify-center'>
+        <Footer />
       </section>
       <ToastContainer />
     </main>

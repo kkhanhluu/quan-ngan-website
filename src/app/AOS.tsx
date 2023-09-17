@@ -5,7 +5,7 @@ import { FC, useEffect } from 'react';
 
 export const AOSInit: FC = () => {
   useEffect(() => {
-    AOS.init({ once: false, offset: 120, startEvent: 'load' });
+    AOS.init({ once: false, offset: 120 });
   });
   return null;
 };
