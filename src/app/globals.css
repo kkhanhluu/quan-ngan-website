@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'Simpliciter Sans Small Caps';
   src: url('https://db.onlinewebfonts.com/t/7c6a89f8efb1822a623c7a02a4d84e94.eot');

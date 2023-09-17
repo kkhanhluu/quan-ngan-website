@@ -20,7 +20,11 @@ export const Notebook: FC<{
   wishes?: { wish: string; author: string; isPublished: string }[];
 }> = ({ wishes }) => {
   return (
-    <div className='w-[60%] md:w-full md:!mt-[10rem]'>
+    <div
+      className='w-[60%] md:w-full md:!mt-[10rem]'
+      data-aos='fade-up'
+      data-aos-duration='1000'
+    >
       <HTMLFlipBook
         width={550}
         height={733}

@@ -15,7 +15,11 @@ const incosolata = Inconsolata({
 
 export const InvitationCard: FC = () => {
   return (
-    <div className='h-[45rem] lg:overflow-hidden z-0 w-full max-w-full md:w-[90%] md:mx-auto'>
+    <div
+      data-aos='fade-up'
+      data-aos-delay='300'
+      className='h-[45rem] lg:overflow-hidden z-0 w-full max-w-full md:w-[90%] md:mx-auto'
+    >
       <Image
         src={imageBgFlower}
         alt='flower'

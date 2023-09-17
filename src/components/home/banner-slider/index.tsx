@@ -51,7 +51,7 @@ export const BannerSlider: FC = () => {
   );
 
   return (
-    <div className='absolute top-0 left-0 w-[100vw] h-[100vh]'>
+    <div className='absolute top-0 left-0 w-[100vw] h-[100vh] md:relative'>
       <div ref={ref} className='keen-slider overflow-hidden h-full relative'>
         <div
           style={{ opacity: opacities[0] }}

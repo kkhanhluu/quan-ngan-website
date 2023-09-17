@@ -23,7 +23,9 @@ export const Form: FC<{
   }
   return (
     <form
-      className={`${styles.postcard} overflow-x-hidden bg-pastel-blue md:w-full flex space-x-4 px-10 py-10 justify-center md:flex-col md:px-6`}
+      data-aos='fade-up'
+      data-aos-duration='1000'
+      className={`${styles.postcard} overflow-x-hidden bg-pastel-pink md:w-full flex space-x-4 px-10 py-10 justify-center md:flex-col md:px-6`}
       action={onSubmit}
     >
       <div className='flex flex-col space-y-4'>
@@ -62,7 +64,7 @@ export const Form: FC<{
         <button
           type='submit'
           disabled={pending}
-          className={`${styles.button} flex items-center disabled:opacity-50 disabled:bg-gray-400 text-lg md:text-base w-[90%] md:mr-4 md:w-[65%] mt-[5rem] md:mt-[2rem] bg-pastel-blue hover:bg-blue-300`}
+          className={`${styles.button} flex items-center disabled:opacity-50 disabled:bg-gray-400 text-lg md:text-base w-[90%] md:mr-4 md:w-[65%] mt-[5rem] md:mt-[2rem] bg-pastel-pink hover:bg-pink-300`}
         >
           {pending ? (
             <svg
