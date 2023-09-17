@@ -23,7 +23,7 @@ export const InvitationCard: FC = () => {
       <Image
         src={imageBgFlower}
         alt='flower'
-        className='w-[220px] top-[70px] left-[400px] z-20 absolute md:w-[150px] md:h-[280px] md:top-60px] md:-left-[60px]'
+        className='w-[220px] top-[100px] left-[400px] z-20 absolute md:w-[150px] md:h-[280px] md:top-60px] md:-left-[60px]'
       />
       <Image
         src={rightImage}
