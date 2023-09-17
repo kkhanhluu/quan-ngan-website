@@ -16,8 +16,9 @@ const bettrisisa = localFont({
 });
 const moonDance = Moon_Dance({ subsets: ['vietnamese'], weight: '400' });
 
-const wishes = new Array(6).fill(null);
-export const Notebook: FC = () => {
+export const Notebook: FC<{
+  wishes?: { wish: string; author: string; isPublished: string }[];
+}> = ({ wishes }) => {
   return (
     <div className='w-[60%] md:w-full md:!mt-[10rem]'>
       <HTMLFlipBook
@@ -34,18 +35,11 @@ export const Notebook: FC = () => {
         className={`${styles.flipBook} md:!w-full`}
       >
         <PageCover />
-        {wishes.map((wish, index) => (
-          <Page
-            text='Chúc mừng hạnh phúc bạn iu của tôi. Chúc bạn luôn nhiều sức khoẻ
-			 nhiều sự yêu thương xinh đẹp và hạnh phúc nhé. Sorry vì ko thể về
-			 cưới bạn iu được. ❤️❤️❤️'
-            author='Khanh Luu'
-            number={index + 1}
-            key={index}
-          >
-            ️
-          </Page>
-        ))}
+        {wishes
+          ?.filter(({ isPublished }) => isPublished === 'TRUE')
+          .map(({ author, isPublished, wish }, index) => (
+            <Page text={wish} author={author} number={index + 1} key={index} />
+          ))}
       </HTMLFlipBook>
     </div>
   );

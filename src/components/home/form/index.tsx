@@ -1,14 +1,30 @@
+'use client';
+
 import { Moon_Dance } from 'next/font/google';
 import { FC } from 'react';
+import { experimental_useFormStatus as useFormStatus } from 'react-dom';
+import { toast } from 'react-toastify';
 import styles from './styles.module.css';
 
 const moonDance = Moon_Dance({ subsets: ['vietnamese'], weight: '400' });
 
-export const Form: FC = () => {
+export const Form: FC<{
+  submitWish: (formData: FormData) => Promise<void>;
+}> = ({ submitWish }) => {
+  const { pending } = useFormStatus();
+
+  async function onSubmit(formData: FormData) {
+    toast.promise(() => submitWish(formData), {
+      pending: 'Đang gửi lời chúc ⏳',
+      success:
+        'Lời chúc đã được gửi. Lời chúc của bạn sẽ xuất hiện trong sổ lưu bút sau một vài phút 👌',
+      error: 'Đã có lỗi xảy ra. Vui lòng thử lại 😅',
+    });
+  }
   return (
     <form
       className={`${styles.postcard} overflow-x-hidden bg-pastel-blue md:w-full flex space-x-4 px-10 py-10 justify-center md:flex-col md:px-6`}
-      action=''
+      action={onSubmit}
     >
       <div className='flex flex-col space-y-4'>
         <label className='text-lg md:text-base' htmlFor='t-message'>
@@ -40,14 +56,30 @@ export const Form: FC = () => {
             className={`text-3xl md:w-[60%] md:text-2xl block ${moonDance.className} border-b-2`}
             type='text'
             id='sender'
-            name='sender-name'
+            name='sender'
           />
         </div>
         <button
           type='submit'
-          className={`${styles.button} text-lg md:text-base w-[80%] md:mr-4 md:w-[70%] mt-[5rem] md:mt-[2rem] bg-pastel-blue hover:bg-blue-300`}
-          name='button'
+          disabled={pending}
+          className={`${styles.button} flex items-center disabled:opacity-50 disabled:bg-gray-400 text-lg md:text-base w-[90%] md:mr-4 md:w-[65%] mt-[5rem] md:mt-[2rem] bg-pastel-blue hover:bg-blue-300`}
         >
+          {pending ? (
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              className='mr-2 h-4 w-4 animate-spin'
+            >
+              <path d='M21 12a9 9 0 1 1-6.219-8.56'></path>
+            </svg>
+          ) : null}
           Nhấn để gửi lời chúc &gt;&gt;&gt;
         </button>
       </div>
