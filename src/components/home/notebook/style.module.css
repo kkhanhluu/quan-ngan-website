@@ -10,7 +10,8 @@
   background-color: #fafafa;
   color: #785e3a;
   border: solid 1px #c2b5a3;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .page .pageContent {
   width: 100%;
