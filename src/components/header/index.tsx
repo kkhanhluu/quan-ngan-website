@@ -35,7 +35,7 @@ export const Header: FC = () => {
 
       {/* Mobile */}
       <nav
-        className={`bg-white border-gray-200 dark:bg-gray-900  transition-all w-full md:block hidden ${barlow.className}`}
+        className={`bg-white border-gray-200  transition-all w-full md:block hidden ${barlow.className}`}
         id='mobile-navbar'
       >
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>

@@ -44,6 +44,7 @@ export const Notebook: FC<{
           .map(({ author, isPublished, wish }, index) => (
             <Page text={wish} author={author} number={index + 1} key={index} />
           ))}
+        <PageCover />
       </HTMLFlipBook>
     </div>
   );
