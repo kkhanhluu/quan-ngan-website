@@ -1,7 +1,7 @@
 'use client';
 
 import { Moon_Dance } from 'next/font/google';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 import { toast } from 'react-toastify';
 import styles from './styles.module.css';
@@ -12,6 +12,8 @@ export const Form: FC<{
   submitWish: (formData: FormData) => Promise<void>;
 }> = ({ submitWish }) => {
   const { pending } = useFormStatus();
+  const [message, setMessage] = useState<string>();
+  const [sender, setSender] = useState<string>();
 
   async function onSubmit(formData: FormData) {
     toast.promise(() => submitWish(formData), {
@@ -33,11 +35,13 @@ export const Form: FC<{
           Lời chúc:{' '}
         </label>
         <textarea
-          className={`${styles.textarea} ${moonDance.className} mt-6 text-3xl md:text-2xl`}
+          className={`${styles.textarea} ${moonDance.className} md:p-4 mt-6 text-3xl md:text-2xl`}
           name='message'
+          required
           rows={12}
           cols={50}
           placeholder='Gửi lời chúc của bạn tới cô dâu chú rể'
+          onChange={(e) => setMessage(e.target.value)}
         ></textarea>
       </div>
       <div className='flex flex-col justify-end w-1/2 md:w-full md:items-end'>
@@ -57,13 +61,15 @@ export const Form: FC<{
           <input
             className={`text-3xl md:w-[60%] md:text-2xl block ${moonDance.className} border-b-2`}
             type='text'
+            required
             id='sender'
             name='sender'
+            onChange={(e) => setSender(e.target.value)}
           />
         </div>
         <button
           type='submit'
-          disabled={pending}
+          disabled={pending || message == null || sender == null}
           className={`${styles.button} flex items-center disabled:opacity-50 disabled:bg-gray-400 text-lg md:text-base w-[90%] md:mr-4 md:w-[65%] mt-[5rem] md:mt-[2rem] bg-pastel-pink hover:bg-pink-300`}
         >
           {pending ? (
