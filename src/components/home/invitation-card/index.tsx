@@ -23,15 +23,15 @@ export const InvitationCard: FC = () => {
       <Image
         src={imageBgFlower}
         alt='flower'
-        className='w-[220px] top-[100px] left-[400px] z-20 absolute md:w-[150px] md:h-[280px] md:top-60px] md:-left-[60px]'
+        className='w-[220px] top-[250px] left-[400px] z-20 absolute md:w-[150px] md:h-[280px] md:top-60px] md:-left-[60px]'
       />
       <Image
         src={rightImage}
         alt='flower'
-        className='w-[400px] h-[508px] absolute top-[400px] right-[400px] z-20 md:w-[300px] md:top-[500px] md:h-[380px] md:-right-[75px]'
+        className='w-[400px] h-[508px] absolute top-[550px] right-[400px] z-20 md:w-[300px] md:top-[500px] md:h-[380px] md:-right-[75px]'
       />
       <div
-        className={`bg-white ${incosolata.className} relative tracking-[2px] font-[500] w-[45%] md:w-full mx-auto p-2 z-10 mt-[15rem] md:mt-[10rem]`}
+        className={`bg-white ${incosolata.className} relative tracking-[2px] font-[500] w-[45%] md:w-full mx-auto p-2 z-10 mt-[20rem] md:mt-[10rem]`}
       >
         <div className='border-2 items-center py-10 px-12 md:px-4 md:text-center flex flex-col background border-gray-border'>
           <h4

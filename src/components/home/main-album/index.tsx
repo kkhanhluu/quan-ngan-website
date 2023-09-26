@@ -38,7 +38,7 @@ export const MainAlbum: FC = () => {
           wrapperStyle,
           imageProps: { alt, title, sizes, className, onClick },
         }) => {
-          if (photo.src === '/empty.avif') {
+          if (photo.src.includes('empty')) {
             return (
               <div className='flex overflow-hidden bg-[#FAFAFA] px-10 space-y-2 md:px-0 flex-col justify-center items-center self-stretch'>
                 <Image
@@ -82,7 +82,7 @@ export const MainAlbum: FC = () => {
       />
 
       <Lightbox
-        slides={photos.filter((p) => p.src !== '/empty.avif')}
+        slides={photos.filter((p) => !p.src.includes('empty'))}
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}

@@ -9,7 +9,7 @@ export const BannerSlider: FC = () => {
 
   const [ref] = useKeenSlider<HTMLDivElement>(
     {
-      slides: 3,
+      slides: 2,
       loop: true,
       detailsChanged(s) {
         const new_opacities = s.track.details.slides.map(
@@ -51,19 +51,15 @@ export const BannerSlider: FC = () => {
   );
 
   return (
-    <div className='absolute top-0 left-0 w-[100vw] h-[100vh] md:relative'>
+    <div className='absolute top-0 left-0 w-[100vw] h-[110vh] md:relative'>
       <div ref={ref} className='keen-slider overflow-hidden h-full relative'>
         <div
           style={{ opacity: opacities[0] }}
-          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-1.jpeg)]`}
+          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-6.jpeg)]`}
         ></div>
         <div
           style={{ opacity: opacities[1] }}
-          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-3.jpg)]`}
-        ></div>
-        <div
-          style={{ opacity: opacities[2] }}
-          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-3.jpg)]`}
+          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-1.jpeg)]`}
         ></div>
       </div>
     </div>

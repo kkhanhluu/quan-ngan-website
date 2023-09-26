@@ -61,7 +61,7 @@
 }
 
 .element2::before {
-  background-image: url('/timeline-2.jpg');
+  background-image: url('/timeline-2.jpeg');
   right: 55%;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .element4::before {
-  background-image: url('/timeline-4.jpg');
+  background-image: url('/timeline-4.jpeg');
   right: 55%;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .element6::before {
-  background-image: url('/timeline-1.jpg');
+  background-image: url('/timeline-6.jpeg');
   right: 55%;
 }
 

@@ -1,7 +1,7 @@
 import { Moon_Dance } from 'next/font/google';
 import Image from 'next/image';
 import { FC } from 'react';
-import footer from '../../../../public/footer.jpeg';
+import footer from '../../../../public/album-4.jpeg';
 
 const moonDance = Moon_Dance({ subsets: ['vietnamese'], weight: '400' });
 

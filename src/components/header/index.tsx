@@ -18,7 +18,7 @@ export const Header: FC = () => {
     <>
       {/* Desktop */}
       <div
-        className={`flex flex-col items-center space-y-10 ${barlow.className} z-20 md:hidden`}
+        className={`flex flex-col items-center ${barlow.className} z-20 md:hidden`}
       >
         <Image src={logo} alt='Logo' className='w-[350px]' />
         <div className='flex'>

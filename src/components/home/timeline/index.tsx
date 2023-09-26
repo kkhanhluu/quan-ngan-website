@@ -142,10 +142,45 @@ export const Timeline: FC = () => {
     return () => window.removeEventListener('scroll', throttledOnScroll);
   }, [throttledOnScroll]);
 
-  const events = new Array(7).fill(null).map((_, index) => ({
-    year: 1997 + index * 3,
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-  }));
+  // const events = new Array(7).fill(null).map((_, index) => ({
+  //   year: 1997 + index * 3,
+  //   text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+  // }));
+
+  const events = [
+    {
+      year: 'Tháng 4, 1997',
+      text: 'Oe oe, 1 bé trai kháu khỉnh ra đời. “Nam vương” của phòng sản, đẹp trai tuấn tú, lớn lên chắc phải trắng lắm =))',
+    },
+    {
+      year: 'Tháng 4, 1997',
+      text: 'Oeoehihi 1 bé gái tháng 4 cũng ra đời. Cháu bé hơi mốc meo 1 chút, hơi hơi mi nhon 1 xíu. Lớn lên chăc người dài như siêu mẫuuuuu. Cháu tuy đi hơi chậm hơn so với chúng bạn, nhưng được cái hơn 1 tuổi đã nói vanh vách. Hay không làm siêu mẫu nữa, mình làm phát thanh viên?',
+    },
+    {
+      year: '2007',
+      text: 'Oe oe, 1 bé trai kháu khỉnh ra đời. “Nam vương” của phòng sản, đẹp trai tuấn tú, lớn lên chắc phải trắng lắm =))',
+    },
+    {
+      year: '2007',
+      text: 'Chiến thần tự sướng Camera sau. Bên cạnh việc mê nói, Bé Bỉm rất mê chụp ảnh. Xưa nếu không phải Nokia 6300 bộ nhớ cùi, thì bé Bỉm đã phải lưu hàng ngàn tấm ảnh để đời như thế này.',
+    },
+    {
+      year: '2013',
+      text: 'Oe oe, 1 bé trai kháu khỉnh ra đời. “Nam vương” của phòng sản, đẹp trai tuấn tú, lớn lên chắc phải trắng lắm =))',
+    },
+    {
+      year: '2013',
+      text: 'Bí thư Anhb aka Miss thân thiện, hoạt bát nhưng hơi lười học là những mỹ từ tuỵt vời để miêu tả Bỉm phiên bản nâng cấp ở CNH. Bật mí: Cũng vào năm này, tôi đã chạm mặt chú rể lần đầu với tư cách là prommate của bạn chú rể >.<',
+    },
+    {
+      year: '2016',
+      text: 'Chính thức kết bạn, rồi bạn hơi thân, rồi bạn thân hơn, rồi bummmm. Đây là bức ảnh đầu tiên của chúng tui',
+    },
+    {
+      year: '2023',
+      text: 'Bí thư Anhb aka Miss thân thiện, hoạt bát nhưng hơi lười học là những mỹ từ tuỵt vời để miêu tả Bỉm phiên bản nâng cấp ở CNH. Bật mí: Cũng vào năm này, tôi đã chạm mặt chú rể lần đầu với tư cách là prommate của bạn chú rể >.<',
+    },
+  ];
 
   return (
     <div ref={storyRef} className='w-full max-w-full'>
