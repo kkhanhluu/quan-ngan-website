@@ -55,11 +55,11 @@ export const BannerSlider: FC = () => {
       <div ref={ref} className='keen-slider overflow-hidden h-full relative'>
         <div
           style={{ opacity: opacities[0] }}
-          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-6.jpeg)]`}
+          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-6.avif)]`}
         ></div>
         <div
           style={{ opacity: opacities[1] }}
-          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-1.jpeg)]`}
+          className={`fader__slide md:bg-center w-full h-full absolute top-0 bg-no-repeat bg-cover bg-[url(/slider-1.avif)]`}
         ></div>
       </div>
     </div>

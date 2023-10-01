@@ -1,6 +1,6 @@
 const breakpoints = [3840, 2400, 1080, 640, 384, 256, 128, 96, 64, 48];
 
-const link = (id: string) => `/${id}.jpeg`;
+const link = (id: string) => `/${id}.avif`;
 
 const unsplashPhotos = [
   { id: 'album-2', width: 2070, height: 1380 },
