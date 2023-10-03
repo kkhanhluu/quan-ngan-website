@@ -142,11 +142,6 @@ export const Timeline: FC = () => {
     return () => window.removeEventListener('scroll', throttledOnScroll);
   }, [throttledOnScroll]);
 
-  // const events = new Array(7).fill(null).map((_, index) => ({
-  //   year: 1997 + index * 3,
-  //   text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-  // }));
-
   const events = [
     {
       year: 'Tháng 4, 1997',
@@ -158,15 +153,15 @@ export const Timeline: FC = () => {
     },
     {
       year: '2007',
-      text: 'Oe oe, 1 bé trai kháu khỉnh ra đời. “Nam vương” của phòng sản, đẹp trai tuấn tú, lớn lên chắc phải trắng lắm =))',
+      text: 'Từ bé bố cho đi tập tennis. Trước cũng trắng lắm nhưng do đi đánh tennis nên càng ngày càng đen đi. Bức ảnh đánh dấu lần đầu tiên cầm vợt ra sân Khúc Hạo đi đánh giải',
     },
     {
       year: '2007',
       text: 'Chiến thần tự sướng Camera sau. Bên cạnh việc mê nói, Bé Bỉm rất mê chụp ảnh. Xưa nếu không phải Nokia 6300 bộ nhớ cùi, thì bé Bỉm đã phải lưu hàng ngàn tấm ảnh để đời như thế này.',
     },
     {
-      year: '2013',
-      text: 'Oe oe, 1 bé trai kháu khỉnh ra đời. “Nam vương” của phòng sản, đẹp trai tuấn tú, lớn lên chắc phải trắng lắm =))',
+      year: '2011',
+      text: 'Chuẩn bị chuyển cấp, bố mẹ cho đi bộ đội 2 tuần hè: “Chúng tôi là chiến sĩ”',
     },
     {
       year: '2013',
@@ -258,5 +253,7 @@ function getClassName(index: number) {
       return styles.element6;
     case 7:
       return styles.element7;
+    case 8:
+      return styles.element8;
   }
 }

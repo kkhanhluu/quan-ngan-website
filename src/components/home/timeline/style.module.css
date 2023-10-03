@@ -56,7 +56,7 @@
 }
 
 .element1::before {
-  background-image: url('/timeline-1.jpg');
+  background-image: url('/timeline-1.jpeg');
   left: 55%;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .element3::before {
-  background-image: url('/timeline-3.jpg');
+  background-image: url('/timeline-3.jpeg');
   left: 55%;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .element5::before {
-  background-image: url('/timeline-5.jpg');
+  background-image: url('/timeline-5.jpeg');
   left: 55%;
 }
 
@@ -86,8 +86,13 @@
 }
 
 .element7::before {
-  background-image: url('/timeline-2.jpg');
+  background-image: url('/timeline-8.jpeg');
   left: 55%;
+}
+
+.element8::before {
+  background-image: url('/couple.jpeg');
+  right: 55%;
 }
 
 .thumb {

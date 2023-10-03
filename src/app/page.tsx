@@ -128,7 +128,7 @@ export default async function Home() {
         style={{
           WebkitClipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)',
         }}
-        className="flex overflow-hidden countdown-section relative w-full bg-[center_top_10rem] flex-col bg-[url('/card-bg.png')]"
+        className="flex overflow-hidden countdown-section relative w-full bg-[center_top_10rem] flex-col bg-[url('/card-bg.png')] bg-[#E4CBC9]"
       >
         <InvitationCard />
         <Countdown />
