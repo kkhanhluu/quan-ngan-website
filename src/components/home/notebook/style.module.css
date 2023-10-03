@@ -1,10 +1,10 @@
 .flipBook {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   display: none;
-  background-size: 40% 60%;
+  background-size: 40% 100%;
   background-position: 10% 50%;
   background-repeat: no-repeat;
-  background-image: url(/wishes.png);
+  background-image: url(/main-album.jpeg);
 }
 .page {
   background-color: #fafafa;

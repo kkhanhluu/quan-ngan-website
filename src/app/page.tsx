@@ -5,7 +5,6 @@ import { Footer } from '@/components/home/footer';
 import { Form } from '@/components/home/form';
 import { InvitationCard } from '@/components/home/invitation-card';
 import { MainAlbum } from '@/components/home/main-album';
-import { Notebook } from '@/components/home/notebook';
 import { SecondAlbum } from '@/components/home/second-album';
 import { Timeline } from '@/components/home/timeline';
 import 'aos/dist/aos.css';
@@ -127,7 +126,7 @@ export default async function Home() {
       </section>
       <section
         style={{
-          WebkitClipPath: 'polygon(0 0, 100% 0, 100% 80%, 0 100%)',
+          WebkitClipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)',
         }}
         className="flex overflow-hidden countdown-section relative w-full bg-[center_top_10rem] flex-col bg-[url('/card-bg.png')]"
       >
@@ -157,7 +156,7 @@ export default async function Home() {
         className='flex mt-[4rem] flex-col items-center space-y-[6rem] mb-[5rem] w-full justify-center md:justify-start md:items-start'
       >
         <Form submitWish={submitWish} />
-        <Notebook wishes={wishes} />
+        {/* <Notebook wishes={wishes} /> */}
       </section>
       <section className='w-full h-[100vh] min-h-[900px] bg-[url(/footer-bg.png)] bg-center flex flex-col items-center justify-center'>
         <Footer />

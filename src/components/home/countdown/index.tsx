@@ -42,7 +42,7 @@ export const Countdown: FC = () => {
     <div
       data-aos='fade'
       data-aos-delay='100'
-      className='flex w-full mt-[25rem] mb-[20rem] px-[5%] items-center md:mt-[16rem] md:flex-col md:space-y-8'
+      className='flex w-full mt-[50rem] mb-[20rem] px-[5%] items-center md:mt-[45rem] md:flex-col md:space-y-8'
     >
       <Image src={flowerLeft} alt='flower left' />
       <div className='flex space-x-2 w-full justify-evenly'>
