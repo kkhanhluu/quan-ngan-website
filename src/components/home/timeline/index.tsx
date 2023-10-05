@@ -46,12 +46,15 @@ export const Timeline: FC = () => {
       storyEachDecider > storyEachPosition.top + 1 &&
       storyEachDecider <= pgHolderPosition.bottom
     ) {
+      document.getElementById('player')?.classList.add('hidden');
       document.body.classList.add(storyEachToken);
       document.body.classList.remove(storyAfterToken);
     } else if (storyEachDecider > pgHolderPosition.bottom) {
+      document.getElementById('player')?.classList.remove('hidden');
       document.body.classList.remove(storyEachToken);
       document.body.classList.add(storyAfterToken);
     } else {
+      document.getElementById('player')?.classList.remove('hidden');
       document.body.classList.remove(storyEachToken);
       document.body.classList.remove(storyAfterToken);
     }

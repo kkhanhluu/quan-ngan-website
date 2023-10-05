@@ -5,8 +5,10 @@ import { Footer } from '@/components/home/footer';
 import { Form } from '@/components/home/form';
 import { InvitationCard } from '@/components/home/invitation-card';
 import { MainAlbum } from '@/components/home/main-album';
+import { Notebook } from '@/components/home/notebook';
 import { SecondAlbum } from '@/components/home/second-album';
 import { Timeline } from '@/components/home/timeline';
+import { Player } from '@/components/player';
 import 'aos/dist/aos.css';
 import { google } from 'googleapis';
 import { EB_Garamond } from 'next/font/google';
@@ -100,6 +102,7 @@ export default async function Home() {
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between'>
+      <Player />
       <section
         data-aos='fade-left'
         className='min-h-[90vh] -mt-[4rem] pt-20 md:pt-0 z-10 w-full flex flex-col items-center relative'
@@ -156,7 +159,7 @@ export default async function Home() {
         className='flex mt-[4rem] flex-col items-center space-y-[6rem] mb-[5rem] w-full justify-center md:justify-start md:items-start'
       >
         <Form submitWish={submitWish} />
-        {/* <Notebook wishes={wishes} /> */}
+        <Notebook wishes={wishes} />
       </section>
       <section className='w-full h-[100vh] min-h-[900px] bg-[url(/footer-bg.png)] bg-center flex flex-col items-center justify-center'>
         <Footer />
