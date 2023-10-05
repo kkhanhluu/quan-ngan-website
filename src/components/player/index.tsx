@@ -121,7 +121,7 @@ export const Player: FC = () => {
   );
 
   useEffect(() => {
-    // sound?.play();
+    sound?.play();
 
     return () => {
       sound?.unload();
