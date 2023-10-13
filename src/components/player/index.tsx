@@ -1,5 +1,4 @@
 'use client';
-import { Slider } from '@radix-ui/react-slider';
 import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
 import {
@@ -8,7 +7,6 @@ import {
   AiOutlineLoading3Quarters,
 } from 'react-icons/ai';
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs';
-import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
 // @ts-ignore
 import useSound from 'use-sound';
 
@@ -81,14 +79,9 @@ const tracks = [
   },
 ];
 
-const volumes = new Array(20).fill(0).map((_, index) => index * 5);
-
 export const Player: FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0);
   const [currentSong, setCurrentSong] = useState(0);
-
-  const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
 
   const onPlayNext = () => {
     if (currentSong >= tracks.length - 1) {
@@ -121,7 +114,9 @@ export const Player: FC = () => {
   );
 
   useEffect(() => {
-    sound?.play();
+    if (isPlaying) {
+      sound?.play();
+    }
 
     return () => {
       sound?.unload();
@@ -132,12 +127,6 @@ export const Player: FC = () => {
     if (!isPlaying) {
       return play();
     } else pause();
-  };
-
-  const toggleMute = () => {
-    if (volume === 0) {
-      setVolume(1);
-    } else setVolume(0);
   };
 
   let Icon;
@@ -152,10 +141,10 @@ export const Player: FC = () => {
   return (
     <div
       id='player'
-      className='fixed bottom-0 z-50 bg-black py-2 h-[80px] px-4 w-full'
+      className='fixed bottom-0 z-50 bg-black py-2 h-[80px] px-4 md:px-0 w-full'
     >
-      <div className='grid grid-cols-2 md:grid-cols-3 h-full'>
-        <div className='flex pl-16 justify-start w-full'>
+      <div className='grid grid-cols-2 md:grid-cols-2 h-full'>
+        <div className='flex pl-16 md:pl-0 justify-start w-full'>
           <div className='flex items-center gap-x-4'>
             <div className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-800/50 w-full p-2 rounded-md'>
               <div className='relative rounded-md min-h-[48px] min-w-[48px] overflow-hidden'>
@@ -177,7 +166,8 @@ export const Player: FC = () => {
             </div>
           </div>
         </div>
-        <div className='hidden md:flex col-auto w-full justify-end items-center'>
+
+        <div className='hidden md:hidden col-auto w-full justify-end items-center'>
           <div
             onClick={handlePlay}
             className='h-10 w-10 flex items-center p-1 cursor-pointer bg-white justify-center rounded-full'
@@ -186,7 +176,7 @@ export const Player: FC = () => {
           </div>
         </div>
 
-        <div className='flex md:hidden h-full justify-end items-center w-full max-w-[722px] gap-x-6'>
+        <div className='flex md:flex h-full justify-end items-center w-full max-w-[722px] gap-x-6'>
           <AiFillStepBackward
             onClick={onPlayPrevious}
             size={30}
@@ -203,20 +193,6 @@ export const Player: FC = () => {
             size={30}
             className='text-neutral-400 hover:text-white cursor-pointer transition'
           />
-        </div>
-
-        <div className='hidden md:flex w-full justify-end pr-2'>
-          <div className='flex items-center gap-x-2 w-[120px]'>
-            <VolumeIcon
-              onClick={toggleMute}
-              className='cursor-pointer'
-              size={34}
-            />
-            <Slider
-              value={volumes}
-              onValueChange={(value) => console.log(value)}
-            />
-          </div>
         </div>
       </div>
     </div>
