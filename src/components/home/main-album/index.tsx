@@ -1,24 +1,36 @@
 'use client';
+import Image from 'next/image';
 import { FC, useState } from 'react';
 import PhotoAlbum from 'react-photo-album';
+import {
+  isImageFitCover,
+  isImageSlide,
+  useLightboxProps,
+} from 'yet-another-react-lightbox';
 
 import photos from '@/components/home/main-album/photos';
-import { Moon_Dance } from 'next/font/google';
-import localFont from 'next/font/local';
-import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
-import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
-import albumTitle from '../../../../public/album-title.jpeg';
 
-const bettrisisa = localFont({
-  src: '../../../../public/fonts/BettrisiaScript-Bold.woff2',
-});
-const moonDance = Moon_Dance({ subsets: ['vietnamese'], weight: '400' });
+const shimmer = (w: number, h: number) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#333" offset="20%" />
+      <stop stop-color="#222" offset="50%" />
+      <stop stop-color="#333" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#333" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str: string) =>
+  typeof window === 'undefined'
+    ? Buffer.from(str).toString('base64')
+    : window.btoa(str);
 
 export const MainAlbum: FC = () => {
   const [index, setIndex] = useState(-1);
@@ -33,61 +45,55 @@ export const MainAlbum: FC = () => {
           maxPhotos: 3,
           minPhotos: 1,
         }}
-        renderPhoto={({
-          photo,
-          wrapperStyle,
-          imageProps: { alt, title, sizes, className, onClick },
-        }) => {
-          if (photo.src.includes('empty')) {
-            return (
-              <div className='flex overflow-hidden bg-[#FAFAFA] px-10 space-y-2 md:px-0 flex-col justify-center items-center self-stretch'>
-                <Image
-                  src={albumTitle}
-                  alt='Album title'
-                  className='w-[20rem] max-w-full -mt-[4rem] md:-mt-[2rem] md:w-[8rem]'
-                />
-                <div className='flex flex-col space-y-10 md:space-y-2 w-full md:!-mt-[1.5rem]'>
-                  <h4
-                    className={`${bettrisisa.className} md:text-xl !font-extrabold text-6xl text-pastel-blue text-center`}
-                  >
-                    Quân & Ngân
-                  </h4>
-                  <div className='flex flex-col items-center text-pastel-blue'>
-                    <h5
-                      className={`${moonDance.className} !font-semibold capitalize text-4xl md:text-[14px]`}
-                    >
-                      Hà nội,
-                    </h5>
-                    <h5
-                      className={`${moonDance.className} !font-semibold text-2xl md:text-[13px] md:-mt-[1rem]`}
-                    >
-                      22/10/2023
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            );
-          }
-          return (
-            <div style={{ ...wrapperStyle, position: 'relative' }}>
-              <Image
-                fill
-                src={photo}
-                placeholder={'blurDataURL' in photo ? 'blur' : undefined}
-                {...{ alt, title, sizes, className, onClick }}
-              />
-            </div>
-          );
-        }}
       />
 
       <Lightbox
-        slides={photos.filter((p) => !p.src.includes('empty'))}
+        slides={photos}
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}
-        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+        render={{ slide: NextJsImage }}
       />
     </>
   );
 };
+
+function isNextJsImage(slide: any) {
+  return (
+    isImageSlide(slide) &&
+    typeof slide.width === 'number' &&
+    typeof slide.height === 'number'
+  );
+}
+
+export default function NextJsImage({ slide, rect }: any) {
+  const { imageFit } = useLightboxProps().carousel;
+  const cover = isImageSlide(slide) && isImageFitCover(slide, imageFit);
+
+  if (!isNextJsImage(slide)) return undefined;
+
+  const width = !cover
+    ? Math.round(
+        Math.min(rect.width, (rect.height / slide.height) * slide.width)
+      )
+    : rect.width;
+
+  const height = !cover
+    ? Math.round(
+        Math.min(rect.height, (rect.width / slide.width) * slide.height)
+      )
+    : rect.height;
+
+  return (
+    <div style={{ position: 'relative', width, height }}>
+      <Image
+        fill
+        alt=''
+        src={slide}
+        loading='lazy'
+        placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+        sizes={`${Math.ceil((width / window.innerWidth) * 100)}vw`}
+      />
+    </div>
+  );
+}

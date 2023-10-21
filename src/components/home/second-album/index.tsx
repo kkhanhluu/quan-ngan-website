@@ -2,14 +2,10 @@
 import { FC, useState } from 'react';
 import PhotoAlbum from 'react-photo-album';
 
+import NextJsImage from '@/components/home/main-album';
 import photos from '@/components/home/second-album/photos';
-import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
-import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 
 export const SecondAlbum: FC = () => {
@@ -27,31 +23,14 @@ export const SecondAlbum: FC = () => {
           minPhotos: 4,
           maxPhotos: 5,
         }}
-        renderPhoto={({
-          photo,
-          wrapperStyle,
-          imageProps: { alt, title, sizes, className, onClick },
-        }) => {
-          return (
-            <div style={{ ...wrapperStyle, position: 'relative' }}>
-              <Image
-                fill
-                src={photo}
-                placeholder={'blurDataURL' in photo ? 'blur' : undefined}
-                {...{ alt, title, sizes, className, onClick }}
-              />
-            </div>
-          );
-        }}
       />
 
       <Lightbox
-        slides={photos.filter((p) => p.src !== '/empty.avif')}
+        slides={photos}
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}
-        // enable optional lightbox plugins
-        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+        render={{ slide: NextJsImage }}
       />
     </>
   );

@@ -73,7 +73,7 @@ const FirstPage: FC = () => {
             <h4
               className={`${comorant.className} md:text-xl px-4 uppercase text-[#6FA8CC] border-r-[1px] border-[#75A3C4] text-4xl font-[700]`}
             >
-              11h00
+              9h00
             </h4>
             <h4
               className={`${comorant.className} md:text-xl px-4 uppercase text-[#6FA8CC] text-4xl font-[700]`}

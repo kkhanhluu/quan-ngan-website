@@ -176,7 +176,7 @@ export const Timeline: FC = () => {
     },
     {
       year: '2023',
-      text: 'Bí thư Anhb aka Miss thân thiện, hoạt bát nhưng hơi lười học là những mỹ từ tuỵt vời để miêu tả Bỉm phiên bản nâng cấp ở CNH. Bật mí: Cũng vào năm này, tôi đã chạm mặt chú rể lần đầu với tư cách là prommate của bạn chú rể >.<',
+      text: 'Bên nhau cũng ngót nghét 7 năm, có zui có buồn. Nhưng cuối cùng 2 đứa cx dắt tay nhau về đích 💖',
     },
   ];
 
