@@ -123,7 +123,7 @@ export default async function Home() {
           <h4
             className={`${garamond.className} md:text-xl md:mt-2 md:mr-2 !font-extralight mr-[6rem] text-2xl z-20`}
           >
-            20.09.2020
+            23.10.2023
           </h4>
         </div>
       </section>
